@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Select | Premium Shopping</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="announcement">
+        A CURATED WORLD OF FASHION & TIMEPIECES
+    </div>
+
+    <header class="header">
+
+        <a href="#" class="logo">
+            MAISON
+            <span>SELECT</span>
+        </a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#elara">ÉLARA</a>
+            <a href="#timeora">TIMEORA</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="header-actions">
+            <button onclick="toggleSearch()">Search</button>
+            <button onclick="toggleCart()">
+                Bag (<span id="cart-count">0</span>)
+            </button>
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">THE ART OF EVERYDAY LUXURY</p>
+
+                <h1>
+                    Made to be
+                    <em>remembered.</em>
+                </h1>
+
+                <p>
+                    Discover a curated collection of elegant suits
+                    and timeless watches. Two exclusive brands,
+                    one premium shopping destination.
+                </p>
+
+                <a href="#elara" class="primary-btn">
+                    EXPLORE COLLECTION
+                </a>
+
+            </div>
+
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1200" alt="Fashion collection">
+            </div>
+
+        </section>
+
+        <section class="intro">
+
+            <p class="eyebrow">TWO SIGNATURE COLLECTIONS</p>
+
+            <h2>
+                Different expressions.
+                <em>One destination.</em>
+            </h2>
+
+            <p>
+                Explore fashion and accessories selected
+                for people who appreciate quality and detail.
+            </p>
+
+        </section>
+
+        <!-- ELARA SECTION -->
+
+        <section class="brand-section" id="elara">
+
+            <div class="brand-banner elara-banner">
+
+                <div>
+                    <p class="eyebrow">PREMIUM CLOTHING</p>
+
+                    <h2>
+                        ÉLARA
+                        <em>Elegance in every thread.</em>
+                    </h2>
+
+                    <p>
+                        Discover beautiful suits designed
+                        for your special moments.
+                    </p>
+
+                    <a href="#elara-products" class="light-btn">
+                        SHOP ÉLARA
+                    </a>
+                </div>
+
+                <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e8?w=1000" alt="ÉLARA fashion">
+
+            </div>
+
+            <div class="section-heading" id="elara-products">
+                <div>
+                    <p class="eyebrow">ÉLARA COLLECTION</p>
+                    <h2>Explore Our Suits</h2>
+                </div>
+            </div>
+
+            <div class="categories" id="elara-categories"></div>
+
+            <div class="product-grid" id="elara-products-grid">
+                <p>Loading products...</p>
+            </div>
+
+        </section>
+
+        <!-- TIMEORA SECTION -->
+
+        <section class="brand-section" id="timeora">
+
+            <div class="brand-banner timeora-banner">
+
+                <div>
+                    <p class="eyebrow">PREMIUM TIMEPIECES</p>
+
+                    <h2>
+                        TIMEORA
+                        <em>Every second matters.</em>
+                    </h2>
+
+                    <p>
+                        Discover watches that represent
+                        timeless style and confidence.
+                    </p>
+
+                    <a href="#timeora-products" class="light-btn">
+                        SHOP TIMEORA
+                    </a>
+                </div>
+
+                <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=1000" alt="TIMEORA watches">
+
+            </div>
+
+            <div class="section-heading" id="timeora-products">
+                <div>
+                    <p class="eyebrow">TIMEORA COLLECTION</p>
+                    <h2>Explore Our Watches</h2>
+                </div>
+            </div>
+
+            <div class="categories" id="timeora-categories"></div>
+
+            <div class="product-grid" id="timeora-products-grid">
+                <p>Loading watches...</p>
+            </div>
+
+        </section>
+
+        <section class="about" id="about">
+
+            <p class="eyebrow">OUR PHILOSOPHY</p>
+
+            <h2>
+                Style is personal.
+                <em>Quality is timeless.</em>
+            </h2>
+
+            <p>
+                Maison Select brings together ÉLARA and TIMEORA
+                in one premium shopping experience.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <h2>MAISON SELECT</h2>
+        <p>ÉLARA × TIMEORA</p>
+        <p>© 2026 Maison Select. All Rights Reserved.</p>
+    </footer>
+
+    <!-- SEARCH -->
+
+    <div class="search-box" id="search-box">
+        <input type="text" id="search-input"
+               placeholder="Search products..."
+               oninput="searchProducts()">
+
+        <button onclick="toggleSearch()">Close</button>
+    </div>
+
+    <!-- CART -->
+
+    <div class="cart-panel" id="cart-panel">
+
+        <button class="close-btn" onclick="toggleCart()">×</button>
+
+        <h2>Shopping Bag</h2>
+
+        <div id="cart-items"></div>
+
+        <h3>
+            Total: Rs. <span id="cart-total">0</span>
+        </h3>
+
+    </div>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content" id="modal-content"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
